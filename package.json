@@ -1,0 +1,28 @@
+{
+  "name": "cinevault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev --prefix server\" \"npm:dev --prefix worker\" \"npm:start --prefix client\"",
+    "dev:api": "npm run dev --prefix server",
+    "dev:worker": "npm run dev --prefix worker",
+    "dev:ui": "npm start --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "bullmq": "^5.67.1",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.2.3",
+    "ioredis": "^5.9.2",
+    "mongoose": "^9.1.5",
+    "p-limit": "^7.2.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "cinevault-worker",
+  "version": "1.0.0",
+  "main": "src/worker.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/worker.js",
+    "start": "node src/worker.js"
+  }
+}

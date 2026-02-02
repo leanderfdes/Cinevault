@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* premium dark palette */
+  --bg: 10 10 13;
+  --card: 18 18 24;
+  --text: 240 240 255;
+  --muted: 155 155 175;
+  --border: 40 40 55;
+  --accent: 120 90 255;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
