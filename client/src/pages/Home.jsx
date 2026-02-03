@@ -140,7 +140,7 @@ export default function Home() {
 
               <p className="mt-4 text-muted max-w-2xl leading-relaxed">
                 Browse premium collections like the Top 250 and Japanese Anime
-                Top 50 — designed for smooth exploration, rich metadata, and
+                Top 50,designed for smooth exploration, rich metadata, and
                 poster-first browsing.
               </p>
             </div>
