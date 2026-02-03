@@ -24,9 +24,16 @@ app.use(morgan("dev"));
 // 1. FIX: Move CORS to the top, before ANY routes
 app.use(cors({
   origin: (origin, cb) => {
-    // allow same-origin / tools like curl/postman (no origin header)
+    // 1. Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return cb(null, true);
+
+    // 2. Allow if explicitly listed in .env (localhost, production domain)
     if (origins.includes(origin)) return cb(null, true);
+
+    // 3. SMART FIX: Allow ANY Vercel preview deployment automatically
+    if (origin.endsWith(".vercel.app")) return cb(null, true);
+
+    // Otherwise, block
     return cb(new Error("Not allowed by CORS"));
   }
 }));
