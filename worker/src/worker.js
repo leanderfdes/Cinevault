@@ -606,3 +606,22 @@ async function enrichMissingDescriptions({ max = 250, concurrency = 3, delayMs =
 
   console.log(`[worker] Listening for jobs on queue: movies (redis: ${redisUrl})`);
 })();
+
+// ... (keep all your existing code above) ...
+
+// --------------------
+// DUMMY SERVER FOR RENDER DEPLOYMENT
+// --------------------
+// Render "Web Services" require a port to be open. 
+// This fake server satisfies that requirement so the deploy succeeds.
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Worker is healthy and running!");
+});
+
+const PORT = process.env.PORT || 10000;
+server.listen(PORT, () => {
+  console.log(`[worker] Dummy server listening on port ${PORT} to satisfy Render`);
+});
