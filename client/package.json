@@ -30,5 +30,8 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
     "vite": "^7.2.4"
-  }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
